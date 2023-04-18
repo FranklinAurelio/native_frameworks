@@ -66,6 +66,7 @@ class HomeViewController: UIViewController {
     
     func tryOpoenCamera(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
+            camera.delegate = self
             camera.openCamera(self, imageController)
         }
     }
@@ -76,3 +77,13 @@ class HomeViewController: UIViewController {
         tryOpoenCamera()
     }
 }
+
+// MARK: - Extensions
+
+extension HomeViewController: CamerDelegate{
+    func didSelectPhoto(_ image: UIImage) {
+        let recibo = Recibo(status: false, data: Date(), foto: image)
+        Secao.shared.addRecibos(recibo)
+    }
+}
+
