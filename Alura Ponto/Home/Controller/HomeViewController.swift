@@ -1,11 +1,12 @@
 //
-//  HomeViewController.swift
+//  Camera.swift
 //  Alura Ponto
 //
-//  Created by Ândriu Felipe Coelho on 22/09/21.
+//  Created by Franklin Carvalho on 12/04/23.
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class HomeViewController: UIViewController {
     private var timer: Timer?
     private lazy var camera = Camera()
     private lazy var imageController = UIImagePickerController()
+    
+    var contexto: NSManagedObjectContext = {
+        let contexto = UIApplication.shared.delegate as! AppDelegate
+        return contexto.persistentContainer.viewContext
+    }()
     
     // MARK: - View life cycle
 
@@ -83,7 +89,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: CamerDelegate{
     func didSelectPhoto(_ image: UIImage) {
         let recibo = Recibo(status: false, data: Date(), foto: image)
-        Secao.shared.addRecibos(recibo)
+        recibo.save(contexto)
     }
 }
 

@@ -1,8 +1,8 @@
 //
-//  AppDelegate.swift
+//  Camera.swift
 //  Alura Ponto
 //
-//  Created by Ândriu Felipe Coelho on 22/09/21.
+//  Created by Franklin Carvalho on 12/04/23.
 //
 
 import UIKit

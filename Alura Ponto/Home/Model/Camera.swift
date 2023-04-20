@@ -24,6 +24,15 @@ class Camera: NSObject {
         imagePicker.cameraDevice = UIImagePickerController.isCameraDeviceAvailable(.front) ?  .front : .rear
         controller.present(imagePicker, animated: true)
     }
+    
+    func openPhotoLibrary(_ controller: UIViewController, _ imagePicker: UIImagePickerController){
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
+        controller.present(imagePicker, animated: true)
+    }
 }
 
 
