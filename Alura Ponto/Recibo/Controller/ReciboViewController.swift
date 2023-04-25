@@ -45,10 +45,12 @@ class ReciboViewController: UIViewController {
         configuraTableView()
         configuraViewFoto()
         searching.delegate = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         getRecibos()
+        getImageProfile()
         reciboTableView.reloadData()
     }
     
@@ -56,6 +58,12 @@ class ReciboViewController: UIViewController {
     
     func getRecibos(){
         Recibo.getDataPersist(searching)
+    }
+    
+    func getImageProfile() {
+        if let imageProfile = Profile().loadImage(){
+            fotoPerfilImageView.image = imageProfile
+        }
     }
     
     func configuraViewFoto() {
@@ -115,20 +123,37 @@ extension ReciboViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let recibo = searching.fetchedObjects?[indexPath.row]
+        let mapViewController = MapViewController.intanciar(recibo)
+        mapViewController.modalPresentationStyle = .automatic
+        
+        present(mapViewController, animated: true)
+    }
 }
 
 extension ReciboViewController: ReciboTableViewCellDelegate {
     func deletarRecibo(_ index: Int) {
        
-        guard let recibo  = searching.fetchedObjects?[index] else{ return }
-        recibo.delete(contexto)
+        LocalAuthentication().authUser { isAuth in
+            if isAuth {
+                guard let recibo  = self.searching.fetchedObjects?[index] else{ return }
+                recibo.delete(self.contexto)
+            }
+        }
+        
+       
+        
+        
         //reciboTableView.reloadData()
     }
 }
 
 extension ReciboViewController: CamerDelegate {
     func didSelectPhoto(_ image: UIImage) {
-        
+        Profile().saveImage(image)
         escolhaFotoButton.isHidden = true
         fotoPerfilImageView.image = image
     }

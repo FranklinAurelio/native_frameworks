@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutitems</key>
+	<array>
+		<dict>
+			<key>UlApplicationShortcutitemTitle</key>
+			<string>Registrar ponto</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcuticonTypeCompose</string>
+			<key>UlApplicationShortcutitemType</key>
+			<string>RegistrarPonto</string>
+		</dict>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O aplicativo utilizará sua localização para registro de ponto</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>O aplicativo precisará usar suas credenciais para autenticação</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>O aplicativo deseja acessar a biblioteca de fotos para registro do ponto</string>
 	<key>NSCameraUsageDescription</key>

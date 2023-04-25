@@ -21,6 +21,11 @@
 		03431DD32703BD2B00EB8D91 /* Alura_Ponto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03431DD12703BD2B00EB8D91 /* Alura_Ponto.xcdatamodeld */; };
 		03E880B22704FC4400033A34 /* Recibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E880B12704FC4400033A34 /* Recibo.swift */; };
 		166EC3AD29E6FF14003A8139 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166EC3AC29E6FF14003A8139 /* Camera.swift */; };
+		16DA714029F7EF4B004D2E55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA713F29F7EF4B004D2E55 /* Profile.swift */; };
+		16DA714229F8027A004D2E55 /* LocalAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA714129F8027A004D2E55 /* LocalAuthentication.swift */; };
+		16DA714429F81913004D2E55 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA714329F81913004D2E55 /* Localization.swift */; };
+		16DA714A29F8261C004D2E55 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA714829F8261C004D2E55 /* MapViewController.swift */; };
+		16DA714B29F8261C004D2E55 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DA714929F8261C004D2E55 /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		03431DD22703BD2B00EB8D91 /* Alura_Ponto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alura_Ponto.xcdatamodel; sourceTree = "<group>"; };
 		03E880B12704FC4400033A34 /* Recibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recibo.swift; sourceTree = "<group>"; };
 		166EC3AC29E6FF14003A8139 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		16DA713F29F7EF4B004D2E55 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		16DA714129F8027A004D2E55 /* LocalAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthentication.swift; sourceTree = "<group>"; };
+		16DA714329F81913004D2E55 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		16DA714829F8261C004D2E55 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		16DA714929F8261C004D2E55 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 				030EF1B926FBD69B000D3E42 /* AppDelegate */,
 				030EF1BC26FBD6B8000D3E42 /* Home */,
 				030EF1CF26FBE686000D3E42 /* Recibo */,
+				16DA714529F82251004D2E55 /* Map */,
 				03431DD02703BD0A00EB8D91 /* CoreData */,
 				030EF1AE26FBD61E000D3E42 /* Assets.xcassets */,
 				030EF1B026FBD61E000D3E42 /* LaunchScreen.storyboard */,
@@ -150,6 +161,9 @@
 				03E880B12704FC4400033A34 /* Recibo.swift */,
 				03431DCB270290D200EB8D91 /* FormatadorDeData.swift */,
 				166EC3AC29E6FF14003A8139 /* Camera.swift */,
+				16DA713F29F7EF4B004D2E55 /* Profile.swift */,
+				16DA714129F8027A004D2E55 /* LocalAuthentication.swift */,
+				16DA714329F81913004D2E55 /* Localization.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +183,31 @@
 				03431DD12703BD2B00EB8D91 /* Alura_Ponto.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		16DA714529F82251004D2E55 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				16DA714729F8229C004D2E55 /* Controller */,
+				16DA714629F82289004D2E55 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		16DA714629F82289004D2E55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16DA714929F8261C004D2E55 /* MapViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16DA714729F8229C004D2E55 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16DA714829F8261C004D2E55 /* MapViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030EF1CC26FBE62E000D3E42 /* ReciboViewController.xib in Resources */,
+				16DA714B29F8261C004D2E55 /* MapViewController.xib in Resources */,
 				030EF1DA26FD2A13000D3E42 /* ReciboTableViewCell.xib in Resources */,
 				030EF1B226FBD61E000D3E42 /* LaunchScreen.storyboard in Resources */,
 				030EF1AF26FBD61E000D3E42 /* Assets.xcassets in Resources */,
@@ -244,8 +284,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				030EF1D926FD2A13000D3E42 /* ReciboTableViewCell.swift in Sources */,
+				16DA714229F8027A004D2E55 /* LocalAuthentication.swift in Sources */,
+				16DA714429F81913004D2E55 /* Localization.swift in Sources */,
+				16DA714029F7EF4B004D2E55 /* Profile.swift in Sources */,
 				030EF1CB26FBE62E000D3E42 /* ReciboViewController.swift in Sources */,
 				03431DD32703BD2B00EB8D91 /* Alura_Ponto.xcdatamodeld in Sources */,
+				16DA714A29F8261C004D2E55 /* MapViewController.swift in Sources */,
 				030EF1A626FBD61C000D3E42 /* AppDelegate.swift in Sources */,
 				030EF1A826FBD61C000D3E42 /* SceneDelegate.swift in Sources */,
 				166EC3AD29E6FF14003A8139 /* Camera.swift in Sources */,

@@ -17,14 +17,18 @@ class Recibo: NSManagedObject {
     @NSManaged var status: Bool
     @NSManaged var data: Date
     @NSManaged var foto: UIImage
+    @NSManaged var lat: Double
+    @NSManaged var lng: Double
     
-    convenience init(status: Bool, data: Date, foto: UIImage) {
+    convenience init(status: Bool, data: Date, foto: UIImage, lat: Double, lng: Double) {
         let contexto = UIApplication.shared.delegate as! AppDelegate
         self.init(context: contexto.persistentContainer.viewContext)
         self.id = UUID()
         self.status = status
         self.data = data
         self.foto = foto
+        self.lat = lat
+        self.lng = lng
     }
 }
 
