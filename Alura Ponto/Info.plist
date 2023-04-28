@@ -2,25 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Registrar ponto</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeCompose</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>RegistrarPonto</string>
-		</dict>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>O aplicativo utilizará sua localização para registro de ponto</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>O aplicativo precisará usar suas credenciais para autenticação</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>O aplicativo deseja acessar a biblioteca de fotos para registro do ponto</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Franklin deseja acessar sua camera</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -39,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Franklin deseja acessar sua camera</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>O aplicativo precisará usar suas credenciais para autenticação</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O aplicativo utilizará sua localização para registro de ponto</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>O aplicativo deseja acessar a biblioteca de fotos para registro do ponto</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,6 +45,17 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCompose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Registrar ponto</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>RegistrarPonto</string>
+		</dict>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
