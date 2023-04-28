@@ -66,7 +66,7 @@
 		030EF19926FBD61C000D3E42 = {
 			isa = PBXGroup;
 			children = (
-				030EF1A426FBD61C000D3E42 /* Alura Ponto */,
+				030EF1A426FBD61C000D3E42 /* Native Frameworks */,
 				030EF1A326FBD61C000D3E42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		030EF1A426FBD61C000D3E42 /* Alura Ponto */ = {
+		030EF1A426FBD61C000D3E42 /* Native Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				030EF1B926FBD69B000D3E42 /* AppDelegate */,
@@ -91,7 +91,7 @@
 				030EF1B026FBD61E000D3E42 /* LaunchScreen.storyboard */,
 				030EF1B326FBD61E000D3E42 /* Info.plist */,
 			);
-			path = "Alura Ponto";
+			path = "Native Frameworks";
 			sourceTree = "<group>";
 		};
 		030EF1B926FBD69B000D3E42 /* AppDelegate */ = {
