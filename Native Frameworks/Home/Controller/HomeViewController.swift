@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     
     lazy var managerLocation = CLLocationManager()
     private lazy var localization = Localization()
+    private lazy var reciboSrevice = ReciboSrevice()
     // MARK: - View life cycle
 
     override func viewDidLoad() {
@@ -92,7 +93,16 @@ class HomeViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func registrarButton(_ sender: UIButton) {
-        tryOpoenCamera()
+        let recibo = Recibo(status: false, data: Date(), foto: UIImage(), lat: lat ?? 0.0, lng: lng ?? 0.0)
+       
+        
+        reciboSrevice.post(recibo) { [weak self] isSave in
+            if !isSave{
+                guard let contexto = self?.contexto else {return}
+                recibo.save(contexto)
+            }
+        }
+        //tryOpoenCamera()
     }
 }
 
@@ -100,8 +110,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CamerDelegate{
     func didSelectPhoto(_ image: UIImage) {
-        let recibo = Recibo(status: false, data: Date(), foto: image, lat: lat ?? 0.0, lng: lng ?? 0.0)
+        /*let recibo = Recibo(status: false, data: Date(), foto: image, lat: lat ?? 0.0, lng: lng ?? 0.0)
         recibo.save(contexto)
+        
+        let reciboSrevice = ReciboSrevice()
+        reciboSrevice.post(recibo)*/
     }
 }
 
