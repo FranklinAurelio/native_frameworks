@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import Alamofire
 
 class ReciboSrevice{
     
     private let baseUrl = "http://localhost:8080/"
     
+    
+    //MARK: - POST
     func post(_ recibo: Recibo, completion: @escaping(_ isSave: Bool) -> Void){
         let path = "recibos"
         
@@ -44,5 +47,34 @@ class ReciboSrevice{
             
         }.resume()
     }
+    
+    //MARK: - GET
+    func get( completion: @escaping(_ recibos: [Recibo]?, _ error: Error?) -> Void){
+        let path = "recibos"
+        AF.request(baseUrl + path, method: .get, headers: ["Accept": "application/json"]).responseJSON { response in
+            switch response.result{
+            case .success(let json):
+                
+                var recibos: [Recibo] = []
+                
+                if let listResponse = json as? [[String : Any]]{
+                    for reciboDict in listResponse {
+                        if let newRecibo = Recibo.serialize(reciboDict){
+                            recibos.append(newRecibo)
+                        }
+                    }
+                    
+                    completion(recibos, nil)
+                }
+                break
+            case .failure(let error):
+                completion(nil, error)
+                break
+            }
+        }
+    }
+    
+    //MARK: - DELETE
+    
     
 }

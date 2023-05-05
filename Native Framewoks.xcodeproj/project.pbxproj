@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		03E880B22704FC4400033A34 /* Recibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E880B12704FC4400033A34 /* Recibo.swift */; };
 		166EC3AD29E6FF14003A8139 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166EC3AC29E6FF14003A8139 /* Camera.swift */; };
 		16B07A312A054D660098FE1A /* ReciboService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B07A302A054D660098FE1A /* ReciboService.swift */; };
+		16B07A342A058A200098FE1A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 16B07A332A058A200098FE1A /* Alamofire */; };
 		16DA714029F7EF4B004D2E55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA713F29F7EF4B004D2E55 /* Profile.swift */; };
 		16DA714229F8027A004D2E55 /* LocalAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA714129F8027A004D2E55 /* LocalAuthentication.swift */; };
 		16DA714429F81913004D2E55 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA714329F81913004D2E55 /* Localization.swift */; };
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B07A342A058A200098FE1A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +239,9 @@
 			dependencies = (
 			);
 			name = "Native Framewoks";
+			packageProductDependencies = (
+				16B07A332A058A200098FE1A /* Alamofire */,
+			);
 			productName = "Alura Ponto";
 			productReference = 030EF1A226FBD61C000D3E42 /* Native Framewoks.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 030EF19926FBD61C000D3E42;
+			packageReferences = (
+				16B07A322A058A200098FE1A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 030EF1A326FBD61C000D3E42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -501,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		16B07A322A058A200098FE1A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		16B07A332A058A200098FE1A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16B07A322A058A200098FE1A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		03431DD12703BD2B00EB8D91 /* Alura_Ponto.xcdatamodeld */ = {
