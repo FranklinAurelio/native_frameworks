@@ -20,10 +20,10 @@ class Recibo: NSManagedObject {
     @NSManaged var lat: Double
     @NSManaged var lng: Double
     
-    convenience init(status: Bool, data: Date, foto: UIImage, lat: Double, lng: Double) {
+    convenience init(id: UUID? = UUID(), status: Bool, data: Date, foto: UIImage, lat: Double, lng: Double) {
         let contexto = UIApplication.shared.delegate as! AppDelegate
         self.init(context: contexto.persistentContainer.viewContext)
-        self.id = UUID()
+        self.id = id ?? UUID()
         self.status = status
         self.data = data
         self.foto = foto
@@ -32,6 +32,10 @@ class Recibo: NSManagedObject {
     }
     
     class func serialize (_ json: [String : Any]) -> Recibo? {
+        guard let id = json["id"] as? String, let uuid = UUID(uuidString: id) else {
+            return nil
+        }
+        
         guard let dateString = json["data"]  as? String,
               let data = FormatadorDeData().getData(dateString),
               let status = json["status"] as? Bool
@@ -43,7 +47,7 @@ class Recibo: NSManagedObject {
         let latitude  = localization["latitude"] as? Double ?? 0.0
         let longitude = localization["longitude"] as? Double ?? 0.0
         
-        return Recibo(status: status, data: data, foto: UIImage(), lat: latitude, lng: longitude)
+        return Recibo(id: uuid, status: status, data: data, foto: UIImage(), lat: latitude, lng: longitude)
     }
 }
 

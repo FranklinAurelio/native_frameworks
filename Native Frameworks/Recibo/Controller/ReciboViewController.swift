@@ -151,6 +151,10 @@ extension ReciboViewController: ReciboTableViewCellDelegate {
         LocalAuthentication().authUser { isAuth in
             if isAuth {
                 let recibo  = self.recibos[index]
+                self.reciboSrevice.delete(id: "\(recibo.id)") {
+                    self.recibos.remove(at: index)
+                    self.reciboTableView.reloadData()
+                }
                 //recibo.delete(self.contexto)
             }
         }

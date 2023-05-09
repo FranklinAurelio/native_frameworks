@@ -75,6 +75,12 @@ class ReciboSrevice{
     }
     
     //MARK: - DELETE
+    func delete(id: String, completion: @escaping() -> Void){
+        let path = "recibos/"
+        AF.request(baseUrl + path + id, method: .delete, headers: ["Accept": "application/json"]).responseData { _ in
+            completion() 
+        }
+    }
     
     
 }
